@@ -1,0 +1,31 @@
+﻿<style>
+    #header-menu-dropdown a:not(.disabled) {
+        color: black
+    }
+
+    #header-menu-dropdown-button {
+        border-top: none;
+        border-bottom: none;
+        min-height: 38px;
+        border-radius: 0px;
+        background-color: #f9f9f9;
+    }
+
+    .utility-header .flex-row .settings-links a {
+        margin: auto;
+        font-size: inherit;
+        padding: 5px 10px;
+    }
+</style>
+
+<div class="dropdown" id="header-menu-dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="header-menu-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+        @System.Security.Claims.ClaimsPrincipal.Current.Identity.Name
+    </button>
+    <div class="dropdown-menu" aria-labelledby="header-menu-dropdown-button">
+        <a class="dropdown-item" href="~/My_Profile">
+            <i class="bi bi-person-fill" aria-hidden="true"></i>
+            My Profile
+        </a>
+    </div>
+</div>

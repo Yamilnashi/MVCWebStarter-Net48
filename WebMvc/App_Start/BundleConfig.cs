@@ -24,6 +24,7 @@ namespace WebMvc
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/root.css",
                       "~/Content/site.css"));
         }
     }

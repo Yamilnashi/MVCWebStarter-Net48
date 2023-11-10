@@ -1,0 +1,75 @@
+﻿@{ 
+    var rv = ViewContext.RouteData.Values;
+    string page = $"{rv["page"]}".ToLowerInvariant();
+    string[] urlParts = page.Split('/');
+    Func<string, string> isActive = (mainPageUrlPart) =>
+    {
+        if (urlParts.Length < 2)
+            return "";
+        return string.Compare(urlParts[1], mainPageUrlPart, true) == 0 ? "active" : "";
+    };
+    Func<List<string>, string> isActiveComplexLink = (List<string> mainPageUrlParts) =>
+    {
+        if (urlParts.Length < mainPageUrlParts.Count + 1)
+            return "";
+        var res = mainPageUrlParts.Select((x, i) => (x, i)).All(item => string.Compare(item.x, urlParts[item.i + 1], true) == 0);
+        if (res)
+            return "active";
+        return "";
+    };
+}
+<!--  Navigation -->
+<div class="navigation-search full-width-nav container">
+    <!-- Include Navigation -->
+    <nav id="navigation" class="main-navigation megadropdown" style="width: 100%; padding-left: 0px;">
+        <ul id="nav_list" class="top-level-nav">
+            <li class="nav-item @isActive("about") ">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>About</a>
+            </li>
+            <li class="nav-item @isActive("directory")">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Directory</a>
+            </li>
+            <li class="nav-item @isActive("policies_and_procedures")">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-book" aria-hidden="true"></span>Policies &amp; Procedures</a>
+            </li>
+            <li class="nav-item @isActive("Forms")">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-document" aria-hidden="true"></span>Forms</a>
+            </li>
+            <li class="nav-item @isActive("Communications")">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-chat-bubbles" aria-hidden="true"></span>Communications</a>
+            </li>
+            <li class="nav-item @isActiveComplexLink(new List<string>{"Departments", "HumanResources"}) ">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-briefcase" aria-hidden="true"></span>Human Resources</a>
+            </li>
+            <li class="nav-item @isActiveComplexLink(new List<string>{"Departments", "Training"}) ">
+                <a asp-page="#" class="first-level-link"><span class="ca-gov-icon-desktop-video-module" aria-hidden="true"></span>Training</a>
+            </li>
+            @* <li class="nav-item @isActive("Careers")">
+                    <a href = "/Careers" class="first-level-link"><span class="ca-gov-icon-capitol" aria-hidden="true"></span>Careers</a>
+                </li>*@
+
+            <li class="nav-item">
+                <a href="https://www.csac.ca.gov/" target="_blank" class="first-level-link"><span class="ca-gov-icon-arrow-fill-right-up" aria-hidden="true"></span>CSAC Internet</a>
+            </li>
+            <li class="nav-item @isActive("Departments")">
+                <a href="#" class="first-level-link"><span class="ca-gov-icon-apps" aria-hidden="true"></span>Resources</a>
+            </li>
+
+            @*            <li class="nav-item" id="nav-item-search">
+                    <button class="first-level-link" aria-label="Search Button"><span class="ca-gov-icon-search" aria-hidden="true"></span>Resources</button>
+                </li>*@
+
+        </ul>
+    </nav>
+    <div id="head-search" class="search-container">
+        <!-- Google Custom Search -->
+        <div class="container">
+            <form id="Search" class="pos-rel" action="/serp.html">
+                <span class="sr-only" id="SearchInput">Custom Google Search</span>
+                <input type="text" id="q" name="q" aria-labelledby="SearchInput" placeholder="Search this website" class="search-textfield height-50 border-0 p-x-sm w-100" />
+                <button type="submit" class="pos-abs gsc-search-button top-0 width-50 height-50 border-0 bg-transparent"><span class="ca-gov-icon-search font-size-30 color-gray" aria-hidden="true"></span><span class="sr-only">Submit</span></button>
+                <div class="width-50 height-50 close-search-btn"><button class="close-search gsc-clear-button width-50 height-50 border-0 bg-transparent pos-rel" type="reset"><span class="sr-only">Close Search</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button></div>
+            </form>
+        </div>
+    </div>
+</div>

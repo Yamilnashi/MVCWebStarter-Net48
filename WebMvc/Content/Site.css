@@ -1,20 +1,283 @@
-﻿/* Set padding to keep content from hitting the edges */
-.body-content {
-    margin-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+﻿.utility-header [class^="ca-gov-icon-"] {
+    color: white;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+ul#nav_list {
+    margin: 0 !important;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+main a:not(.btn),
+main button.btn-link {
+    color: #0c4c91;
+    text-decoration: none !important;
+}
+
+    main a:not(.btn):hover {
+        color: #02374e;
+        text-decoration: none !important;
+    }
+
+
+th.nowrap, td.nowrap {
+    white-space: nowrap;
+}
+
+table a {
+    color: #50aee4;
+}
+
+
+div.well {
+    background: #f2f2f2;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+table.dataTable.table-striped > tbody > tr.odd > * {
+    box-shadow: none;
+}
+
+.card {
+    border: 0;
+}
+
+    .card .card-body {
+        border-top: none;
+    }
+
+        .card .card-body a {
+            color: #0c4c91;
+        }
+
+    .card.card-primary {
+        background-color: inherit;
+        color: inherit;
+    }
+
+        .card.card-primary .card-body {
+            border: 1px solid #00000038;
+            border-top: none;
+        }
+
+        .card.card-primary .card-header {
+            background-color: var(--main-color);
+            border-bottom: 4px solid var(--secondary-color);
+            color: white;
+        }
+
+.nav-link {
+    color: #0c4c91;
+}
+
+.page-item.active .page-link {
+    background-color: #0c4c91;
+}
+
+div.myprofile-settings {
+    background-color: #f7f7f7;
+}
+
+    div.myprofile-settings button.close {
+        position: relative;
+        right: 2px;
+        color: #928888;
+        text-shadow: none;
+        opacity: 0.8;
+        font-size: 2.5em;
+        top: -186px;
+        height: 24px;
+    }
+
+        div.myprofile-settings button.close span {
+            position: relative;
+            top: -10px;
+        }
+
+
+
+    div.myprofile-settings fieldset {
+        display: block;
+        border: 2px;
+        border-style: solid;
+        border-color: threedface;
+        border-image: initial;
+    }
+
+    div.myprofile-settings legend {
+        margin-bottom: 0px;
+        display: inline;
+        width: auto;
+        margin-bottom: -16px;
+        padding-bottom: 7px;
+    }
+
+        div.myprofile-settings legend span.ca-gov-icon {
+            color: #4e4e4eb5;
+        }
+
+.my-spinner-div {
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+    min-width: 300px;
+    align-items: center;
+}
+
+.card-primary a:not(.btn):focus, .card-primary a:not(.btn):hover {
+    color: #153554;
+    text-decoration: underline;
+}
+
+.dropdown-item.disabled, .dropdown-item:disabled {
+    color: #adb5bd !important;
+    pointer-events: none;
+    cursor: default;
+}
+
+#navigation li.nav-item.active {
+    box-shadow: 0px 3px #153554;
+}
+
+#navigation .first-level-link > span[class^=ca-gov-icon]:not(.carrot) {
+    color: #153554c7;
+}
+
+    #navigation .first-level-link > span[class^=ca-gov-icon]:not(.carrot):hover {
+        color: #153554c7;
+    }
+
+.nav-item:focus, .nav-item:hover {
+    background-color: transparent;
+    box-shadow: 0px 3px #153554;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+    margin: 0px auto;
+}
+
+main h1 {
+    font-size: 1.6em;
+}
+
+main h2 {
+    font-size: 1.1em;
+}
+
+div.container p,
+div.container ul {
+    margin: 0.5rem auto !important;
+}
+
+.table > :not(:last-child) > :last-child > * {
+    border-bottom: none;
+}
+
+
+/*modify checkbox size*/
+input[type=checkbox] {
+    -ms-transform: scale(2.5); /* IE */
+    -moz-transform: scale(2.5); /* FF */
+    -webkit-transform: scale(2.5); /* Safari and Chrome */
+    -o-transform: scale(2.5); /* Opera */
+    transform: scale(2.5);
+    margin: 10px 0px 0px 0px;
+}
+
+    input[type=checkbox] ~ span,
+    input[type=checkbox] ~ label {
+        margin-left: 10px;
+    }
+
+/*modify radio size*/
+input[type=radio] {
+    -ms-transform: scale(2.5); /* IE */
+    -moz-transform: scale(2.5); /* FF */
+    -webkit-transform: scale(2.5); /* Safari and Chrome */
+    -o-transform: scale(2.5); /* Opera */
+    transform: scale(2.5);
+    margin: 5px 15px 5px 10px;
+}
+
+    input[type=radio] ~ span,
+    input[type=radio] ~ label {
+        margin-left: 35px;
+    }
+
+
+/* toastr opacity*/
+#toast-container > div {
+    opacity: 1;
+}
+
+a.iconbox {
+    color: #9fc7da !important;
+    text-decoration: none;
+    background-color: #dae7ee;
+}
+
+.iconbox {
+    /*padding: 20px;*/
+    border: 1px solid #ddd;
+    display: block;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+    .iconbox p {
+        margin-bottom: 0;
+    }
+
+.icon-wrap {
+    background: #104169;
+    padding: 7px;
+    /*margin-right: 15px;*/
+    text-align: center;
+    border-bottom: 3px solid #fbad23;
+    border-right: none;
+}
+
+    .icon-wrap em {
+        font-size: 26px;
+        width: 3rem;
+    }
+
+div.text-center h3.h5, div.text-center h2.h5 {
+    margin: 11px;
+    color: #000000;
+}
+
+a.iconbox:hover {
+    color: #fbad23 !important;
+    text-decoration: underline !important;
+}
+
+
+a.iconbox:focus {
+    color: #fbad23;
+}
+
+aside {
+    margin-bottom: 10px;
+}
+
+    aside:hover {
+        color: #fbad23 !important;
+        text-decoration: underline !important;
+    }
+
+}
+
+
+.doc-icon {
+    width: 16px;
+    height: 16px;
 }

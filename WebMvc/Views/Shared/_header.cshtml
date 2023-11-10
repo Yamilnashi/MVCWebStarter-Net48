@@ -1,0 +1,39 @@
+﻿@{
+    string environment = "Development";
+}
+
+<input type="hidden" value="@environment" id="environment-name-hidden" />
+<header role="banner" id="header" class="global-header fixed">
+    @*<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>*@
+    @if (environment != "Production")
+    {
+        <div class="alert-info text-center"> - @environment Environment -</div>
+    }
+
+    <partial name="header/_AlertBanner" />
+
+    <div class="utility-header">
+        <div class="container">
+
+            <div class="group flex-row">
+                <div class="social-media-links">
+                    <div class="header-cagov-logo"><a href="https://ca.gov"><span class="sr-only">CA.gov</span><img src="https://california.azureedge.net/cdt/statetemplate/5.5.23/images/Ca-Gov-Logo-Gold.svg" class="pos-rel" alt="" aria-hidden="true" /></a></div>
+                    <a href="/" class="ca-gov-icon-home"><span class="sr-only">Home</span></a>
+                </div>
+                <div class="settings-links">
+                    <div id="header-menu-container">
+                        @Html.Partial("_HeaderMenu")
+                    </div>
+                    <button class="btn btn-xs btn-primary" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings">
+                        <span class="ca-gov-icon-gear" aria-hidden="true"></span> Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("header/_SettingsBar")
+    @Html.Partial("header/_Branding")
+    @Html.Partial("header/_Mobile")
+    @Html.Partial("header/_Navigation")
+</header>

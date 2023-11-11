@@ -1,29 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace WebMvc.Controllers
 {
+    [RoutePrefix("")]
     public class HomeController : Controller
     {
+        [Route("")]
+        [Route("Index")]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        [Route("OneColumn")]
+        public ActionResult OneColumn()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        [Route("TwoColumns")]
+        public ActionResult TwoColumns()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        [Route("ThreeColumns")]
+        public ActionResult ThreeColumns()
+        {
             return View();
         }
     }

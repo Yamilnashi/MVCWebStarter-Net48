@@ -1,7 +1,6 @@
 ﻿@{ 
     var rv = ViewContext.RouteData.Values;
-    string page = $"{rv["page"]}".ToLowerInvariant();
-    string[] urlParts = page.Split('/');
+    string[] urlParts = rv.Values.Select(x => x.ToString()).ToArray();
     Func<string, string> isActive = (mainPageUrlPart) =>
     {
         if (urlParts.Length < 2)
@@ -23,26 +22,26 @@
     <!-- Include Navigation -->
     <nav id="navigation" class="main-navigation megadropdown" style="width: 100%; padding-left: 0px;">
         <ul id="nav_list" class="top-level-nav">
-            <li class="nav-item @isActive("about") ">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>About</a>
+            <li class="nav-item @isActive("OneColumn") ">
+                <a href="/OneColumn" class="first-level-link"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>One Column</a>
             </li>
-            <li class="nav-item @isActive("directory")">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Directory</a>
+            <li class="nav-item @isActive("TwoColumns")">
+                <a href="/TwoColumns" class="first-level-link"><span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Two Columns</a>
             </li>
-            <li class="nav-item @isActive("policies_and_procedures")">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-book" aria-hidden="true"></span>Policies &amp; Procedures</a>
+            <li class="nav-item @isActive("ThreeColumns")">
+                <a href="/ThreeColumns" class="first-level-link"><span class="ca-gov-icon-book" aria-hidden="true"></span>Three Columns</a>
             </li>
-            <li class="nav-item @isActive("Forms")">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-document" aria-hidden="true"></span>Forms</a>
+            <li class="nav-item @isActive("")">
+                <a href="#" class="first-level-link"><span class="ca-gov-icon-document" aria-hidden="true"></span>Navigation 4</a>
             </li>
             <li class="nav-item @isActive("Communications")">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-chat-bubbles" aria-hidden="true"></span>Communications</a>
+                <a href="#" class="first-level-link"><span class="ca-gov-icon-chat-bubbles" aria-hidden="true"></span>Navigation 5</a>
             </li>
             <li class="nav-item @isActiveComplexLink(new List<string>{"Departments", "HumanResources"}) ">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-briefcase" aria-hidden="true"></span>Human Resources</a>
+                <a href="#" class="first-level-link"><span class="ca-gov-icon-briefcase" aria-hidden="true"></span>Navigation 6</a>
             </li>
             <li class="nav-item @isActiveComplexLink(new List<string>{"Departments", "Training"}) ">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-desktop-video-module" aria-hidden="true"></span>Training</a>
+                <a href="#" class="first-level-link"><span class="ca-gov-icon-desktop-video-module" aria-hidden="true"></span>Navigation 7</a>
             </li>
             @* <li class="nav-item @isActive("Careers")">
                     <a href = "/Careers" class="first-level-link"><span class="ca-gov-icon-capitol" aria-hidden="true"></span>Careers</a>
@@ -52,7 +51,7 @@
                 <a href="https://www.csac.ca.gov/" target="_blank" class="first-level-link"><span class="ca-gov-icon-arrow-fill-right-up" aria-hidden="true"></span>CSAC Internet</a>
             </li>
             <li class="nav-item @isActive("Departments")">
-                <a href="#" class="first-level-link"><span class="ca-gov-icon-apps" aria-hidden="true"></span>Resources</a>
+                <a href="#" class="first-level-link"><span class="ca-gov-icon-apps" aria-hidden="true"></span>Navigation 8</a>
             </li>
 
             @*            <li class="nav-item" id="nav-item-search">

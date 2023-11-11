@@ -31,9 +31,19 @@ namespace WebMvc
             bundles.Add(new Bundle("~/bundles/statecore", "https://california.azureedge.net/cdt/statetemplate/5.5.24/css/cagov.core.css").Include(
                 "~/Content/statestyles/core/cagov.core.css"));
 
-            bundles.Add(new Bundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new Bundle("~/bundles/css").Include(
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new Bundle("~/bundles/site").Include(
+                "~/Content/site.css"));
+
+            bundles.Add(new Bundle("~/bundles/datatablescss").Include(
+                "~/Content/DataTables/css/dataTables.bootstrap5.min.css"));
+
+            bundles.Add(new Bundle("~/bundles/datatablesjs").Include(
+                "~/Scripts/DataTables/jquery.dataTables.min.js",
+                "~/Scripts/DataTables/dataTables.bootstrap5.min.js"));
+
 
             if (Utils.GetAppSetting(EAppSettings.ENVIRONMENT) != "Development")
             {

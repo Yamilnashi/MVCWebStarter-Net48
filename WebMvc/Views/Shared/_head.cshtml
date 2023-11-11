@@ -17,7 +17,7 @@
     <!-- for Windows mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
 
     <meta property="og:image" content="http://https://template.webstandards.ca.gov/template.jpg">
@@ -27,6 +27,7 @@
 
     @Styles.Render("~/bundles/googlefont")
     @Styles.Render("~/bundles/bootstrapicons")
+    @Styles.Render("~/bundles/datatablescss")
 
     @*State Template core styles*@
     @Styles.Render("~/bundles/statecore")
@@ -43,6 +44,9 @@
     @*<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-shasta.min.css" />*@
     @*<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sierra.min.css" />*@
     @*<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-trinity.min.css" />*@
+
+    @* Your own site css *@
+    @Styles.Render("~/bundles/site")
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=USE_YOUR_OWN_CODE"></script>

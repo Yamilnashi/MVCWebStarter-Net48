@@ -1,4 +1,110 @@
-﻿.utility-header [class^="ca-gov-icon-"] {
+﻿:root {
+    --main-color: rgb(16,65,105);
+    --secondary-color: #fbad24;
+    --secondary-light-trans: rgba(251, 173, 35, 0.22);
+}
+
+body {
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 300;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-bottom: 0px;
+    transition: height .3s ease-out;
+}
+
+    body.modal-open {
+        padding-right: 0px !important; /* fix background moving on modal open*/
+    }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, table thead {
+    font-family: inherit;
+}
+
+h1, .h1, h2, h3, h4, table thead {
+    color: #000000b8;
+    font-weight: 600;
+}
+
+.modal-header {
+    background-color: #153554;
+    color: white;
+    border-bottom: 3px solid #fbad23;
+}
+
+.modal-title {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+table .btn-link {
+    display: contents;
+    font-size: inherit;
+}
+
+.btn-close {
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+.first-level-link, .first-level-btn {
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 400;
+}
+
+div#main-content {
+    flex: 1;
+}
+
+header#header {
+    background-color: #f9f9f9;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+header .btn.show.btn-secondary {
+    color: #555;
+}
+
+h1 span[class^="ca-gov-icon-"]:first-child,
+.h1 span[class^="ca-gov-icon-"]:first-child {
+    display: inline;
+}
+
+.p-x-xl {
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+}
+
+.parsley-required {
+    color: #ff1111;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error,
+span.select2-selection.parsley-error {
+    background-color: #ffe2e2;
+}
+
+@media (min-width: 992px) {
+    .branding {
+        height: 90px !important;
+    }
+
+    .p-x-xl {
+        padding-right: 10rem !important;
+        padding-left: 10rem !important;
+    }
+}
+
+
+.utility-header [class^="ca-gov-icon-"] {
     color: white;
 }
 
@@ -274,10 +380,122 @@ aside {
         text-decoration: underline !important;
     }
 
-}
-
-
 .doc-icon {
     width: 16px;
     height: 16px;
 }
+
+
+section#footer {
+    padding: 30px 0;
+}
+
+    section#footer .section-title {
+        text-align: center;
+        color: #007b5e;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+#header-menu-dropdown a:not(.disabled) {
+    color: black
+}
+
+#header-menu-dropdown-button {
+    border-top: none;
+    border-bottom: none;
+    min-height: 40px;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+}
+
+.utility-header .flex-row .settings-links a {
+    margin: auto;
+    font-size: inherit;
+    padding: 5px 10px;
+}
+
+#footer {
+    background: #104169 !important;
+    border-top: 4px solid #fdb81e;
+}
+
+    #footer h5 {
+        padding-left: 10px;
+        border-left: 3px solid #eeeeee;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+        color: #fdb81e;
+    }
+
+    #footer p {
+        color: #fdb81e;
+        font-size: 85%;
+    }
+
+    #footer a {
+        color: #ffffff;
+        text-decoration: none !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    #footer ul.social li {
+        padding: 3px 0;
+    }
+
+        #footer ul.social li a i {
+            margin-right: 5px;
+            font-size: 25px;
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
+
+        #footer ul.social li:hover a i {
+            font-size: 30px;
+            margin-top: -10px;
+        }
+
+        #footer ul.social li a,
+        #footer ul.quick-links li a {
+            color: #ffffff;
+        }
+
+            #footer ul.social li a:hover {
+                color: #eeeeee;
+            }
+
+    #footer ul.quick-links li {
+        padding: 3px 0;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+    }
+
+        #footer ul.quick-links li:hover {
+            padding: 3px 0;
+            margin-left: 5px;
+            font-weight: 700;
+        }
+
+        #footer ul.quick-links li a i {
+            margin-right: 5px;
+        }
+
+        #footer ul.quick-links li:hover a i {
+            font-weight: 700;
+        }
+
+    #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+        font-size: 120%;
+        text-align: center;
+    }
+
+    #footer ul li {
+        display: block;
+    }

@@ -1,28 +1,34 @@
 ﻿@{
-    string environment = "Development";
+    string environment = WebMvc.Data.Utils.GetAppSetting(WebMvc.Data.EAppSettings.ENVIRONMENT);
 }
 
 <input type="hidden" value="@environment" id="environment-name-hidden" />
 <header role="banner" id="header" class="global-header fixed">
-    @*<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>*@
-    @if (environment != "Production")
+    <div id="skip-to-content">
+        <a href="#main-content">Skip to Main Content</a>
+    </div>
+    @if (environment == "Development")
     {
         <div class="alert-info text-center"> - @environment Environment -</div>
     }
-
-    <partial name="header/_AlertBanner" />
-
     <div class="utility-header">
         <div class="container">
 
             <div class="group flex-row">
                 <div class="social-media-links">
-                    <div class="header-cagov-logo"><a href="https://ca.gov"><span class="sr-only">CA.gov</span><img src="https://california.azureedge.net/cdt/statetemplate/5.5.23/images/Ca-Gov-Logo-Gold.svg" class="pos-rel" alt="" aria-hidden="true" /></a></div>
-                    <a href="/" class="ca-gov-icon-home"><span class="sr-only">Home</span></a>
+                    <div class="header-cagov-logo">
+                        <a href="https://ca.gov" rel="noreferrer noopener">
+                            <span class="sr-only">CA.gov</span>
+                            <img src="https://california.azureedge.net/cdt/statetemplate/5.5.23/images/Ca-Gov-Logo-Gold.svg" class="pos-rel" alt="" aria-hidden="true" />
+                        </a>
+                    </div>
+                    <a href="/" class="ca-gov-icon-home">
+                        <span class="sr-only">Home</span>
+                    </a>
                 </div>
                 <div class="settings-links">
                     <div id="header-menu-container">
-                        @Html.Partial("_HeaderMenu")
+                        @Html.Partial("_headerMenu")
                     </div>
                     <button class="btn btn-xs btn-primary" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings">
                         <span class="ca-gov-icon-gear" aria-hidden="true"></span> Settings

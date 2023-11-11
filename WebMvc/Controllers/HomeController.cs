@@ -29,5 +29,11 @@ namespace WebMvc.Controllers
         {
             return View();
         }
+
+        [Route("Tables")]
+        public ActionResult Tables()
+        {
+            return View();
+        }
     }
 }

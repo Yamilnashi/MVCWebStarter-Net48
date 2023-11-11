@@ -440,6 +440,7 @@
     <Content Include="Views\Home\OneColumn.cshtml" />
     <Content Include="Views\Home\TwoColumns.cshtml" />
     <Content Include="Views\Home\ThreeColumns.cshtml" />
+    <Content Include="Views\Home\Tables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -298,7 +298,7 @@
     <Content Include="Content\fonts\google\css2.min.css" />
     <Content Include="Content\icons\bootstrap\bootstrap-icons.css" />
     <Content Include="Content\icons\favicon.ico" />
-    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\company-logo.png" />
     <Content Include="Content\images\state\blank.gif" />
     <Content Include="Content\images\state\fancybox_loading.gif" />
     <Content Include="Content\images\state\fancybox_overlay.png" />

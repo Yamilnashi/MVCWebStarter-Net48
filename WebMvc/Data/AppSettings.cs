@@ -4,7 +4,7 @@ namespace WebMvc.Data
 {
     public enum EAppSettings : byte
     {
-        [Description("DepartmentName")] DEPARTMENT_NAME,
+        [Description("CompanyName")] COMPANY_NAME,
         [Description("Environment")] ENVIRONMENT
     }
 }

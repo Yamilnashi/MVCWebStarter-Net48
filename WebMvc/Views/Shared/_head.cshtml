@@ -5,9 +5,11 @@
     <meta charset="utf-8">
     <title>@ViewData["Title"] - @companyName</title>
     <link rel="icon" type="image/x-icon" href="~/Content/icons/favicon.ico">
-    <meta name="Author" content="State of California" />
-    <meta name="Description" content="State of California" />
-    <meta name="Keywords" content="California, government" />
+
+    <meta name="Author" content="" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+
     <!-- Use highest compatibility mode -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- http://t.co/dKP3o1e -->
@@ -19,20 +21,18 @@
 
     @Styles.Render("~/bundles/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    <meta property="og:image" content="http://https://template.webstandards.ca.gov/template.jpg">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
-
     @Styles.Render("~/bundles/googlefont")
     @Styles.Render("~/bundles/bootstrapicons")
     @Styles.Render("~/bundles/datatablescss")
 
     @*State Template core styles*@
     @Styles.Render("~/bundles/statecore")
-    @*State Template color scheme*@
-    <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sacramento.min.css" />
+
+    @*State Template color scheme (choose one) *@
+    <link rel="stylesheet" 
+          href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sacramento.min.css" 
+          integrity="sha384-72jw1mhnZGyaeaKFwDnN7frRAdzE72wsTc2APz93suyusu5RXfUlOvUmDl/4lTcC" 
+          crossorigin="anonymous" />
     @*<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-delta.min.css" />*@
     @*<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-eureka.min.css" />*@
     @*<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-mono.min.css" />*@

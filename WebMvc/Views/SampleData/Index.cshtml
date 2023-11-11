@@ -1,0 +1,141 @@
+﻿@model WebMvc.ViewModels.SampleData.SampleDataIndexViewModel
+@{ 
+    ViewBag.Title = "Sample Data";
+    Layout = "~/Views/Shared/_OneColumnLayout.cshtml";
+
+    // Default to sacramento
+    Model.Latitude = Model.Latitude == null ? 38.5816 : Model.Latitude;
+    Model.Longitude = Model.Longitude == null ? -121.4944 : Model.Longitude;
+}
+
+@section Heading {
+
+    <h1>7 Day Temperatures</h1>
+    <p>
+        Make an api call to a free weather api service.  If successful, serialize the results into the view model, then convert the 
+        view model into json to use as the data for a the DataTable library.
+    </p>
+
+}
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <div class="mb-4">
+            @Html.LabelFor(x => x.Latitude, "Latitude", new { @id = "lbl-latitude", @for = "txt-latitude" })
+            <div>
+                @Html.TextBoxFor(x => x.Latitude, new { @id = "txt-latitude", @class = "form-control", @type = "number", aria_labelledby = "lbl-latitude" })
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="mb-4">
+            @Html.LabelFor(x => x.Longitude, "Longitude", new { @id = "lbl-longitude", @for = "txt-longitude" })
+            <div>
+                @Html.TextBoxFor(x => x.Longitude, new { @id = "txt-longitude", @class = "form-control", @type = "number", aria_labelledby = "lbl-longitude" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mb-4">
+    <button id="btn-submit" type="button" class="btn btn-primary btn-sm">Make API Call</button>
+</div>
+
+<table id="tbl-forecast-results" class="table table-striped table-sm w-100">
+
+</table>
+
+@section Scripts {
+
+    <script>
+        (function () {
+
+            const eles = {
+                table: '#tbl-forecast-results',
+                latitude: '#txt-latitude',
+                longitude: '#txt-longitude',
+                submit: '#btn-submit'
+            }
+
+            const routePrefix = '/SampleData';
+
+            const routes = {
+                weatherForecastTableJson: `${routePrefix}/WeatherForecastListTableJson`
+            }
+
+            let tables = [];
+
+            const weather = {
+                loadTable: () => {
+                    const lat = $(eles.latitude).val();
+                    const long = $(eles.longitude).val();
+                    const route = `${routes.weatherForecastTableJson}?latitude=${lat}&longitude=${long}`
+                    if (!tables['weather']) {
+                        tables['weather'] = $(eles.table)
+                            .DataTable({
+                                ajax: {
+                                    url: route
+                                },
+                                columns: @Html.Raw(Model.ColDefs_WeatherForecastList),
+                                columnDefs: [
+                                    {
+                                        targets: [0], // Time,
+                                        className: 'text-center align-middle',
+                                        render: function (data, type, row, meta) {
+                                            if (type === 'display') {
+                                                return new moment(data).format('MM/DD LT').toLowerCase();
+                                            } else if (type === 'sort') {
+                                                return new moment(data).format('YYYY-MM-DD');
+                                            }
+                                            return data;
+                                        }
+                                    },
+                                    {
+                                        targets: [1], // Temperature
+                                        className: 'text-center align-middle',
+                                        render: function (celsius, type, row, meta) {
+                                            if (type === 'display') {
+                                                return `${(celsius * 9 / 5) + 32} &deg;`; 
+                                            }
+                                            return celsius;
+                                        }
+                                    },
+                                    {
+                                        targets: [2], // Humidity
+                                        className: 'text-center align-middle',
+                                        render: function (data, type, row, meta) {
+                                            if (type === 'display') {
+                                                return data + '&percnt;';
+                                            }
+                                            return data;
+                                        }
+                                    },
+                                    {
+                                        targets: [3], // Wind Speed
+                                        className: 'text-center align-middle',
+                                        render: function (data, type, row, meta) {
+                                            if (type === 'display') {
+                                                return data;
+                                            }
+                                            return data;
+                                        }
+                                    }
+                                ],
+                                processing: true,
+                                stateSave: false
+                            });
+                    } else {
+                        tables['weather'].ajax.url(route).load();
+                    }
+                }
+            }
+
+            $(eles.submit).on('click', function () {
+                weather.loadTable();
+            });
+
+            weather.loadTable();
+        })();
+    </script>
+    
+}

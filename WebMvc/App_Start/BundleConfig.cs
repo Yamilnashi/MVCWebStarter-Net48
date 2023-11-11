@@ -44,6 +44,9 @@ namespace WebMvc
                 "~/Scripts/DataTables/jquery.dataTables.min.js",
                 "~/Scripts/DataTables/dataTables.bootstrap5.min.js"));
 
+            bundles.Add(new Bundle("~/bundles/moment").Include(
+                "~/Scripts/moment.js"));
+
 
             if (Utils.GetAppSetting(EAppSettings.ENVIRONMENT) != "Development")
             {

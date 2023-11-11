@@ -1,69 +1,56 @@
 ﻿@{
     ViewBag.Title = "Two Columns";
+    Layout = "~/Views/Shared/_TwoColumnLayout.cshtml";
 }
 
-<div id="section-header" class="section-default p-y-md">
-    <div class="container-fluid container-xxl">
 
-        <h1>Two Columns</h1>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+@section LeftColumn {
 
-    </div>
-</div>
-
-<div class="section mx-3">
-    <div class="container-fluid container-xxl">
-        
-        <div class="row">
-            <div class="col-12 col-sm-8">
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Container with content</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>Some content</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Container with content</h2>
             </div>
-            <div class="col-12 col-sm-4">
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #1</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #2</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #3</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
+            <div class="card-body">
+                <p>Some content</p>
             </div>
         </div>
-
     </div>
-</div>
+
+}
+
+@section RightColumn {
+
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #1</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #2</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #3</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+
+}

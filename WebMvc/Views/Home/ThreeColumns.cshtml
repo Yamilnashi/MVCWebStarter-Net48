@@ -1,101 +1,97 @@
 ﻿@{
     ViewBag.Title = "Three Columns";
+    Layout = "~/Views/Shared/_ThreeColumnLayout.cshtml";
 }
 
-<div id="section-header" class="section-default p-y-md">
-    <div class="container-fluid container-xxl">
+@section Heading {
+    <h1>Three Columns</h1>
 
-        <h1>Three Columns</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+}
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
 
-    </div>
-</div>
+@section LeftColumn {
 
-<div class="section mx-3">
-    <div class="container-fluid container-xxl">
-
-        <div class="row">
-            <div class="col-12 col-sm-4">
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Container with content</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>Some content</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Container with content</h2>
             </div>
-            <div class="col-12 col-sm-4">
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #1</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #2</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #3</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-4">
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #1</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #2</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h2 class="card-title">Some Heading #3</h2>
-                        </div>
-                        <div class="card-body">
-                            Content...
-                        </div>
-                    </div>
-                </div>
+            <div class="card-body">
+                <p>Some content</p>
             </div>
         </div>
-
     </div>
-</div>
+
+}
+
+@section MiddleColumn {
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #1</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #2</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #3</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+}
+
+@section RightColumn {
+
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #1</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #2</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2 class="card-title">Some Heading #3</h2>
+            </div>
+            <div class="card-body">
+                Content...
+            </div>
+        </div>
+    </div>
+
+}

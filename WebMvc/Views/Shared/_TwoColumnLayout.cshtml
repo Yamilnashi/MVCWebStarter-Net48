@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+@Html.Partial("_Head")
+@RenderSection("Styles", false)
+<body>
+    @Html.Partial("_Header")
+    <div id="main-content" class="main-content">
+        <main class="main-primary">
+
+            @{
+                string addMarginTop = "";
+            }
+
+            @if (IsSectionDefined("Heading"))
+            {
+                <div id="section-header" class="section-default p-y-md mb-4">
+                    <div class="container-fluid container-xxl">
+
+                        @RenderSection("Heading", false)
+
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                addMarginTop = "mt-4";
+            }
+
+            <div class="container-fluid container-xxl mb-4 @addMarginTop">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        @RenderSection("LeftColumn", true)
+                    </div>
+                    <div class="col-12 col-md-6">
+                        @RenderSection("RightColumn", true)
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    @Html.Partial("_Footer")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

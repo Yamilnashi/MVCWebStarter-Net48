@@ -1,0 +1,126 @@
+﻿@model WebMvc.ViewModels.Profile.MyProfileIndexViewModel
+@{
+    Layout = "~/Views/Shared/_TwoColumnLayout.cshtml";
+
+    string fullName = $"{Model.GivenName} {Model.Surname}";
+}
+
+@section Styles {
+
+    <style>
+        .btn-icon {
+            box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+        }
+
+        img.img-icon {
+            height: 22px;
+            margin: 1px 0;
+        }
+
+        img.badge-photo {
+            height: 186px;
+            border-radius: 20%;
+            padding: 0px;
+        }        
+
+        fieldset legend {
+            color: #1c3453;
+            border-bottom: 1px solid #fbad23;
+        }
+
+            fieldset legend i.bi {
+                color: #1c3453;
+            }
+
+    </style>
+    
+}
+
+@section Heading {
+
+    <h1>My Profile</h1>
+
+}
+
+@section LeftColumn {    
+
+    <div class="mb-4 text-center align-middle">
+        <img class="img-circle img-thumbnail badge-photo" 
+             src="~/Content/images/default-person.jpg" alt="@fullName badge photo" />
+    </div>
+
+    <h2 class="h3 text-center">@fullName</h2>
+
+    <div class="mb-4 text-center">
+        <div>@Model.Title</div>
+        <div>@Model.Branch</div>
+        <div>@Model.Division</div>
+    </div>
+
+    <div class="w-100 text-center">
+        <div class="btn-group">
+            <a class="btn btn-icon btn-secondary" href="im:@Model.EmailAddress">
+                <img src="~/Content/images/Microsoft_Office_Teams.svg" alt="Microsoft Teams Message" class="img-icon" />
+                Message
+            </a>
+            <a class="btn btn-icon btn-secondary" href="callto:@Model.PhoneNumber">
+                <img src="~/Content/images/Microsoft_Office_Teams.svg" alt="Microsoft Teams Call" class="img-icon" />
+                Call
+            </a>
+        </div>
+    </div>
+
+}
+
+@section RightColumn {
+
+    <fieldset>
+        <legend>
+            <i class="bi bi-building" aria-hidden="true"></i>
+            Company Information
+        </legend>
+        <div class="p-x-md p-y-md">
+            <div>
+                <strong>Manager</strong>:  @Model.ManagerName
+            </div>
+            <div>
+                <strong>Title</strong>:  @Model.Title
+            </div>
+            <div>
+                <strong>Branch</strong>:  @Model.Branch
+            </div>
+            <div>
+                <strong>Division</strong>:  @Model.Division
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+            Contact Information
+        </legend>
+        <div class="p-x-md p-y-md">
+            <div>
+                <strong>Phone</strong>:  @Model.PhoneNumber
+            </div>
+            <div>
+                <strong>Email</strong>:  <a href="mailto:@Model.EmailAddress" title="Create new email to @Model.EmailAddress">@Model.EmailAddress</a>
+            </div>
+        </div>
+    </fieldset>
+
+    @if (!string.IsNullOrEmpty(Model.Biography))
+    {
+        <fieldset>
+            <legend>
+                <i class="bi bi-card-heading" aria-hidden="true"></i>
+                Biography
+            </legend>
+            <div class="p-x-md p-y-md">
+                <p>@Model.Biography</p>
+            </div>
+        </fieldset>
+    }
+
+}

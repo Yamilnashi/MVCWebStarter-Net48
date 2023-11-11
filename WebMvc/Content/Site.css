@@ -468,14 +468,13 @@ section#footer {
 
     #footer ul.quick-links li {
         padding: 3px 0;
-        -webkit-transition: .5s all ease;
-        -moz-transition: .5s all ease;
-        transition: .5s all ease;
+        -webkit-transition: .1s all ease;
+        -moz-transition: .1s all ease;
+        transition: .1s all ease;
     }
 
         #footer ul.quick-links li:hover {
-            padding: 3px 0;
-            margin-left: 5px;
+            margin-left: 0px;
             font-weight: 700;
         }
 

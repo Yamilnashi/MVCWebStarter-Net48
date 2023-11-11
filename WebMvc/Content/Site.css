@@ -420,12 +420,15 @@ section#footer {
     border-top: 4px solid #fdb81e;
 }
 
-    #footer h5 {
+    #footer h2.h5 {
         padding-left: 10px;
         border-left: 3px solid #eeeeee;
         padding-bottom: 6px;
         margin-bottom: 20px;
         color: #fdb81e;
+        border-left: 0px;
+        font-size: 1.25rem;
+        margin-top: 20px;
     }
 
     #footer p {

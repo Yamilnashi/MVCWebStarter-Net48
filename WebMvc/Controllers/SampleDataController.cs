@@ -66,7 +66,7 @@ namespace WebMvc.Controllers
                 }
             } catch (Exception ex)
             {
-                return Content($"Error: {ex.Message}");
+                return RedirectToAction("InternalServer", "Error", new { errorMessage = ex.Message });
             }            
 
             return Content(result, "application/json");
